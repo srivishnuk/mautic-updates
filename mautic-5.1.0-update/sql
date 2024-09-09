@@ -1,0 +1,5 @@
+SELECT table_schema, table_name, column_name, column_comment
+    -> FROM information_schema.columns
+    -> WHERE column_comment LIKE '%(DC2Type:json_array)%';
+
+ALTER TABLE reports MODIFY COLUMN settings longtext COLLATE utf8mb4_unicode_ci COMMENT '(DC2Type:json)';
